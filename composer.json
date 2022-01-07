@@ -1,0 +1,17 @@
+{
+    "name": "newmediaretailer/store-hours",
+    "description": "A helper to display store hours",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "PromoCode\\StoreHours\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael Kelly",
+            "email": "puritandesigns@gmail.com"
+        }
+    ],
+    "require": {}
+}
