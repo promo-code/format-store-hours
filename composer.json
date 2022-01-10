@@ -1,5 +1,5 @@
 {
-    "name": "newmediaretailer/store-hours",
+    "name": "promo-code/format-store-hours",
     "description": "A helper to display store hours",
     "type": "library",
     "minimum-stability": "dev",
