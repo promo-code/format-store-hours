@@ -55,7 +55,8 @@ class Hours
         \DateTime $start,
         \DateTime $end,
         $day
-    ): self {
+    ): self
+    {
         if (is_string($day)) {
             $day = self::getDayNumberFromString($day);
         }
@@ -126,7 +127,7 @@ class Hours
                 ->format($start_format);
 
             if (count($days['days']) > 1) {
-                $last_day = new \DateTime(last($days['days']));
+                $last_day = new \DateTime(end($days['days']));
                 $day_label .= $between_days . $last_day->format($end_format);
             }
 
@@ -185,7 +186,7 @@ class Hours
     }
 
     /**
-     * @param \App\HourSet $hours The opening and closing hours for a particular day
+     * @param \PromoCode\StoreHours\HourSet $hours The opening and closing hours for a particular day
      * @return string The hours joined together based on the template variables
      */
     public function convertHoursSetsToFormattedString(HourSet $hours): string
@@ -262,7 +263,8 @@ class Hours
 
     public function setBetweenDayRangeTemplate(
         string $setting_value = '-'
-    ): self {
+    ): self
+    {
         $this->config['templates']['between_day_range'] = $setting_value;
 
         return $this;
@@ -284,7 +286,8 @@ class Hours
 
     public function setBetweenTimeRangeTemplate(
         string $setting_value = '-'
-    ): self {
+    ): self
+    {
         $this->config['templates']['between_time_range'] = $setting_value;
 
         return $this;
@@ -293,7 +296,8 @@ class Hours
 
     public function setTimeFormat(
         string $setting_value = 'g:i'
-    ): self {
+    ): self
+    {
         foreach ([
                      'time_range_start',
                      'time_range_end',
@@ -308,7 +312,8 @@ class Hours
 
     public function setTimeRangeStartTemplate(
         string $setting_value = 'g:i'
-    ): self {
+    ): self
+    {
         $this->config['templates']['time_range_start'] = $setting_value;
 
         return $this;
@@ -316,7 +321,8 @@ class Hours
 
     public function setTimeRangeEndTemplate(
         string $setting_value = 'g:ia'
-    ): self {
+    ): self
+    {
         $this->config['templates']['time_range_end'] = $setting_value;
 
         return $this;
@@ -324,7 +330,8 @@ class Hours
 
     public function setTimeRangeStartWithoutMinutesTemplate(
         string $setting_value = 'g'
-    ): self {
+    ): self
+    {
         $this->config['templates']['time_range_start_no_minutes'] =
             $setting_value;
 
@@ -333,7 +340,8 @@ class Hours
 
     public function setTimeRangeEndWithoutMinutesTemplate(
         string $setting_value = 'ga'
-    ): self {
+    ): self
+    {
         $this->config['templates']['time_range_end_no_minutes'] = $setting_value;
 
         return $this;
@@ -341,7 +349,8 @@ class Hours
 
     public function setJoinTimeRangesTemplate(
         string $setting_value = ', '
-    ): self {
+    ): self
+    {
         $this->config['templates']['join_time_ranges'] = $setting_value;
 
         return $this;
@@ -350,7 +359,8 @@ class Hours
     private function handleDateTime(
         \DateTime $date_time,
         int $day_of_the_week
-    ): \DateTime {
+    ): \DateTime
+    {
         // Setting a date for comparison consistency
         $week_of_jan_11_2010 = $date_time->setDate(2010, 1, 11);
 

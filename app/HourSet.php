@@ -2,7 +2,7 @@
 
 namespace PromoCode\StoreHours;
 
-class HourSet implements \Iterator
+class HourSet implements \Countable, \Iterator
 {
     private $hours_set = [];
 
@@ -26,6 +26,11 @@ class HourSet implements \Iterator
         );
 
         $this->hours_set = $hours_set;
+    }
+
+    public function count()
+    {
+        return count($this->hours_set);
     }
 
     public function current()
